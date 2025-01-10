@@ -1,0 +1,118 @@
+/* Základní styly */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0a1f3d; /* Tmavě modrá barva pozadí */
+    color: #ffffff; /* Bílá barva textu pro lepší čitelnost */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+header .snowflake {
+    width: 100px;
+    height: 100px;
+    margin: 20px 0;
+}
+
+
+
+.concepts ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.concepts ul li {
+    margin: 10px 0;
+}
+
+
+
+/* Styly pro sněhové vločky */
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.snowflake {
+    position: absolute;
+    color: #fff;
+    font-size: 20px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.snowflake {
+    animation: spin 5s linear infinite;
+}
+
+
+header h1 {
+    font-size: 3em;
+    color: #ffffff; /* Bílá barva nadpisu */
+    margin: 0;
+}
+
+header .tagline {
+    font-size: 1.2em;
+    color: #a0c4ff; /* Světle modrá barva podnadpisu */
+}
+
+.intro, .concepts {
+    background: rgba(255, 255, 255, 0.1); /* Průhledné bílé pozadí pro sekce */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.concepts ul li a {
+    text-decoration: none;
+    color: #a0c4ff; /* Světle modrá barva odkazů */
+    font-size: 1.2em;
+}
+
+.concepts ul li a:hover {
+    text-decoration: underline;
+}
+
+.checkmark {
+    color: #00ff00; /* Zelená barva fajfek */
+    margin-left: 10px;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #a0c4ff; /* Světle modrá barva textu v patičce */
+}
+
+.success {
+    color: #00ff00; /* Zelená barva pro úspěšné zprávy */
+    font-weight: bold;
+}

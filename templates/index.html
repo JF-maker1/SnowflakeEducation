@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snowflake Education - Vznik projektu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <h1>Snowflake Education</h1>
+            <p class="tagline">Růst, estetika a klid v poznávání</p>
+        </header>
+        
+<div class="snowflake-logo-container">
+    <img src="{{ url_for('static', filename='snowflake.png') }}" alt="Sněhová vločka" class="snowflake-logo">
+</div> 
+
+<section class="intro">
+    <h2>Vznik projektu</h2>
+    <p>
+        Tato stránka dokumentuje, jak projekt Snowflake Education vznikal. Každý pojem je jako sněhová vločka – kliknutím na něj začne růst a odhalí další vrstvy poznání.
+    </p>
+    {% if explored|length == concepts|length %}
+        <p class="success">Gratulujeme! Prozkoumali jste všechny pojmy. <a href="{{ url_for('christmas') }}">Přejít na Vánoce!</a></p>
+    {% endif %}
+</section>
+
+
+<section class="concepts">
+    <h3>Pojmy k prozkoumání</h3>
+    <ul>
+        {% for concept, description in concepts.items() %}
+            <li>
+                <a href="{{ url_for('snowflake', concept=concept) }}">Co je to {{ concept }}?</a>
+                {% if concept in explored %}
+                    <span class="checkmark">✔</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+
+        <footer>
+            <p>© 2025 Snowflake Education. Všechna práva vyhrazena.</p>
+            <p><a href="{{ url_for('reset') }}">Resetovat prozkoumané pojmy</a></p>
+        </footer>
+    </div>
+</body>
+</html>

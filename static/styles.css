@@ -1,0 +1,124 @@
+/* Základní styly */
+body {
+    font-family: Arial, sans-serif;
+    /*background-color: #f0f8ff; původní */
+    background-color: #c0d8ff; /* námořnická modř*/
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 3em;
+    color: #1e90ff;
+    margin: 0;
+}
+
+header .snowflake {
+    width: 100px;
+    height: 100px;
+    margin: 20px 0;
+}
+
+header .tagline {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.intro, .concepts {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.concepts ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.concepts ul li {
+    margin: 10px 0;
+}
+
+.concepts ul li a {
+    text-decoration: none;
+    color: #1e90ff;
+    font-size: 1.2em;
+}
+
+.concepts ul li a:hover {
+    text-decoration: underline;
+}
+
+.checkmark {
+    color: green;
+    margin-left: 10px;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.success {
+    color: green;
+    font-weight: bold;
+}
+
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+
+.snowflake {
+    position: absolute;
+    color: #ffffff; /* Bílá barva vloček */
+    font-size: 20px;
+    animation: fall linear infinite;
+}
+
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh); /* Padání vloček dolů */
+    }
+}
+
+.snowflake-logo-container {
+    position: fixed; /* Umožňuje pozicování vůči oknu prohlížeče */
+    top: 0; /* Přichytí obrázek k hornímu okraji */
+    right: 0; /* Přichytí obrázek k pravému okraji */
+    z-index: 1000; /* Zajistí, že obrázek bude nad ostatními prvky */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg); /* Začátek: žádná rotace */
+    }
+    100% {
+        transform: rotate(360deg); /* Konec: otočení o 360 stupňů */
+    }
+}
+
+.snowflake-logo {
+    width: 50px; /* Velikost obrázku */
+    height: 50px;
+    margin: 10px; /* Odsazení od okrajů */
+    animation: spin 15s linear infinite; /* Pomalá rotace */
+}

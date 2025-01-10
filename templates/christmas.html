@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vánoce - Snowflake Education</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='snowing.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Vánoce!</h1>
+            <p class="tagline">Nasněžilo a Vánoce jsou tady! 🎄❄️</p>
+        </header>
+
+        <section class="content">
+            <p>Gratulujeme! Prozkoumali jste všechny pojmy a vytvořili jste sněhovou vločku poznání.</p>
+            <a href="{{ url_for('index') }}" class="button">Zpět na hlavní stránku</a>
+        </section>
+    </div>
+</body>
+</html>

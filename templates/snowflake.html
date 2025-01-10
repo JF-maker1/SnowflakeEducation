@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ concept }} - Snowflake Education</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{{ concept }}</h1>
+            <img src="{{ url_for('static', filename='snowflake.png') }}" alt="Sněhová vločka" class="snowflake">
+        </header>
+
+        <section class="content">
+            <p>{{ description }}</p>
+            <a href="{{ url_for('index') }}" class="button">Zpět na hlavní stránku</a>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+app.py
+requirements.txt
+templates/
+static/
+.gitignore
+README.txt
+tracked_files.txt
+add_tracked_files.sh
