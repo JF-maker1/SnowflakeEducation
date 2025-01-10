@@ -11,4 +11,3 @@ templates/christmas.html
 templates/index.html
 templates/snowflake.html
 tracked_files.txt
-

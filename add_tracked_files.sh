@@ -1,4 +1,6 @@
 #!/bin/bash
 while read -r file; do
-    git add "$file"
+    if [[ -n "$file" ]]; then  # Ignoruje prázdné řádky
+        git add "$file"
+    fi
 done < tracked_files.txt
