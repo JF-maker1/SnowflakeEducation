@@ -62,6 +62,10 @@ def snowflake(concept):
 @app.route("/christmas")
 def christmas():
     return render_template("christmas.html")
+    
+@app.route("/map")
+def map():
+    return render_template("map.html", concept_relations=concept_relations, concepts=concepts)
 
 @app.route("/reset")
 def reset():

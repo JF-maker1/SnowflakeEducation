@@ -1,20 +1,26 @@
-/* Základní styly */
+
+
+/* Základní styly pro stránku */
 body {
     font-family: Arial, sans-serif;
-    /*background-color: #f0f8ff; původní */
-    background-color: #c0d8ff; /* námořnická modř*/
+    background-color: #c0d8ff; /* Námořnická modř */
     color: #333;
     margin: 0;
     padding: 0;
     text-align: center;
+    position: relative; /* Umožňuje správné vrstvení prvků */
+    z-index: 1; /* Ostatní prvky budou v popředí */
 }
 
 .container {
+    position: relative;
+    z-index: 2;
+    background-color: transparent; /* Průhledné pozadí */
+    padding: 20px; /* Zachování odsazení */
+    border-radius: 0; /* Bez zaoblených rohů */
+    margin: 20px auto;
     max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
 }
-
 
 /* Styly pro nadpis a podtitul */
 header h1 {
@@ -23,10 +29,11 @@ header h1 {
     margin: 0;
 }
 
-header .snowflake {
-    width: 100px;
-    height: 100px;
-    margin: 20px 0;
+/* Styly pro nadpis a popis */
+header h1 {
+    font-size: 3em;
+    color: #1e90ff;
+    margin: 0;
 }
 
 
@@ -44,7 +51,6 @@ header .tagline {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
-
 
 /* Styly pro odkazy v bílých oddílech */
 .concepts ul {
@@ -190,4 +196,42 @@ footer {
     margin-top: 0;
     font-size: 1.5em; /* Velikost nadpisu */
 }
+
+/* Styly pro odkaz na mapu poznání v patičce */
+footer .button {
+    background-color: #4CAF50; /* Zelená barva pro odkaz na mapu */
+    font-size: 1em; /* Standardní velikost písma */
+    padding: 10px 20px; /* Standardní padding */
+    margin: 5px 0; /* Odsazení od ostatních odkazů */
+}
+
+footer .button:hover {
+    background-color: #45a049; /* Tmavší zelená při najetí myší */
+}
+
+
+/* Styly pro odkazy v patičce */
+footer a {
+    color: #1e90ff; /* Modrá barva odkazu */
+    text-decoration: none; /* Odstranění podtržení */
+    font-size: 1em; /* Standardní velikost písma */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Podtržení při najetí myší */
+    color: #0077cc; /* Tmavší modrá při najetí myší */
+}
+
+
+/* Styly pro SVG plátno s vločkami */
+svg {
+    position: fixed; /* Plátno je fixované na celou obrazovku */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Plátno je v pozadí */
+    pointer-events: none; /* Zabrání interakci s vločkami */
+}
+
  

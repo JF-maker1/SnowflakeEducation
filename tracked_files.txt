@@ -10,4 +10,6 @@ templates/christmas.html
 templates/index.html
 templates/snowflake.html
 templates/base.html
+templates/map.html
 tracked_files.txt
+bundle_files.py
