@@ -111,11 +111,16 @@ header .tagline {
     transform: translateY(-50%); /* Přesné centrování */
 }
 
-
 footer {
     margin-top: 40px;
     font-size: 0.9em;
     color: #666;
+    position: relative;
+    z-index: 1001; /* Zajistí, že odkazy jsou nad vločkami */
+}
+
+footer {
+    z-index: 1002; /* Vyšší než vločky a mapa */
 }
 
 .success {
@@ -123,22 +128,39 @@ footer {
     font-weight: bold;
 }
 
+
 .snowflakes {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    z-index: 1000;
+    pointer-events: auto; /* Povolení interakce s vločkami */
+    z-index: 1001; /* Vyšší než mapa */
 }
-
 
 .snowflake {
     position: absolute;
     color: #ffffff; /* Bílá barva vloček */
     font-size: 20px;
     animation: fall linear infinite;
+    pointer-events: auto; /* Povolení interakce s jednotlivými vločkami */
+    cursor: grab; /* Kurzor pro uchopení vločky */
+}
+
+/* Přidejte do static/styles.css */
+@keyframes rotateSnowflake {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Aplikujte animaci na obrázky vloček v mapě */
+.node-image {
+    animation: rotateSnowflake 15s linear infinite; /* Pomalá rotace */
 }
 
 
@@ -210,11 +232,11 @@ footer .button:hover {
 }
 
 
-/* Styly pro odkazy v patičce */
 footer a {
     color: #1e90ff; /* Modrá barva odkazu */
     text-decoration: none; /* Odstranění podtržení */
     font-size: 1em; /* Standardní velikost písma */
+    pointer-events: auto; /* Povolení interakce s odkazy */
 }
 
 footer a:hover {
@@ -225,13 +247,15 @@ footer a:hover {
 
 /* Styly pro SVG plátno s vločkami */
 svg {
-    position: fixed; /* Plátno je fixované na celou obrazovku */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Plátno je v pozadí */
-    pointer-events: none; /* Zabrání interakci s vločkami */
+    z-index: 1000; /* Nižší než vločky */
+    pointer-events: auto; /* Povolení interakce s mapou */
 }
+
+
 
  
