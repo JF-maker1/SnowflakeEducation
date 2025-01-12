@@ -26,19 +26,22 @@
         </section>
 
         <!-- Bílý oddíl pro odkazy -->
-        <section class="concepts">
-            <h3>Další kroky</h3>
-            <ul>
-                {% if concept == "počítač" %}
-                    <li>
-                        <a href="{{ url_for('snowflake', concept='paměť počítače') }}" class="button">Co je to paměť počítače?</a>
-                    </li>
+<section class="concepts">
+    <h3>Další kroky</h3>
+    <ul>
+        {% for related_concept in concept_relations[concept] %}
+            <li>
+                <a href="{{ url_for('snowflake', concept=related_concept) }}" class="button">Co je to {{ related_concept }}?</a>
+                {% if related_concept in explored %}
+                    <span class="checkmark">✔</span>  <!-- Fajfka pro již navštívené pojmy -->
                 {% endif %}
-                <li>
-                    <a href="{{ url_for('index') }}" class="button">Zpět na hlavní stránku</a>
-                </li>
-            </ul>
-        </section>
+            </li>
+        {% endfor %}
+        <li>
+            <a href="{{ url_for('index') }}" class="button">Zpět na hlavní stránku</a>
+        </li>
+    </ul>
+</section>
 
         <!-- Patička -->
         <footer>
