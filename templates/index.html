@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snowflake Education - Vznik projektu</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    
-    <div class="container">
-        <header>
-            <h1>Snowflake Education</h1>
-            <p class="tagline">Růst, estetika a klid v poznávání</p>
-        </header>
-        
+{% extends "base.html" %}
+
+{% block title %}Snowflake Education - Vznik projektu{% endblock %}
+
+{% block content %}
 <div class="snowflake-logo-container">
     <img src="{{ url_for('static', filename='snowflake.png') }}" alt="Sněhová vločka" class="snowflake-logo">
 </div> 
@@ -28,7 +17,6 @@
     {% endif %}
 </section>
 
-
 <section class="concepts">
     <h3>Pojmy k prozkoumání</h3>
     <ul>
@@ -42,12 +30,4 @@
         {% endfor %}
     </ul>
 </section>
-
-
-        <footer>
-            <p>© 2025 Snowflake Education by F&F. Všechna práva vyhrazena.</p>
-            <p><a href="{{ url_for('reset') }}">Resetovat prozkoumané pojmy</a></p>
-        </footer>
-    </div>
-</body>
-</html>
+{% endblock %}

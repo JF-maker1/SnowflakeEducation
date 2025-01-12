@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Snowflake Education{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    {% block extra_css %}{% endblock %}  <!-- Blok pro další CSS soubory -->
+</head>
+<body>
+    <div class="container">
+        <!-- Záhlaví -->
+        <header>
+            <h1>Snowflake Education</h1>
+            <p class="tagline">Růst, estetika a klid v poznávání</p>
+        </header>
+
+        <!-- Dynamický obsah -->
+        {% block content %}{% endblock %}
+
+        <!-- Patička -->
+        <footer>
+            <p>© 2025 Snowflake Education by F&F. Všechna práva vyhrazena.</p>
+            <p><a href="{{ url_for('reset') }}">Resetovat prozkoumané pojmy</a></p>
+            <p><a href="{{ url_for('index') }}">Zpět na hlavní stránku</a></p>
+        </footer>
+    </div>
+
+    <!-- Společné skripty -->
+    {% block extra_js %}{% endblock %}  <!-- Blok pro další JavaScriptové soubory -->
+</body>
+</html>

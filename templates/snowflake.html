@@ -1,31 +1,17 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ concept }} - Snowflake Education</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <div class="container">
-        <!-- Rotující sněhová vločka v pravém horním rohu -->
-        <div class="snowflake-logo-container">
-            <img src="{{ url_for('static', filename='snowflake.png') }}" alt="Sněhová vločka" class="snowflake-logo">
-        </div>
+{% extends "base.html" %}
 
-        <!-- Nadpis a podtitul -->
-        <header>
-            <h1>Snowflake Education</h1>
-            <p class="tagline">Růst, estetika a klid v poznávání</p>
-        </header>
+{% block title %}{{ concept }} - Snowflake Education{% endblock %}
 
-        <!-- Bílý oddíl pro obsah -->
-        <section class="intro">
-            <h2>{{ concept }}</h2>
-            <p>{{ description }}</p>
-        </section>
+{% block content %}
+<div class="snowflake-logo-container">
+    <img src="{{ url_for('static', filename='snowflake.png') }}" alt="Sněhová vločka" class="snowflake-logo">
+</div>
 
-        <!-- Bílý oddíl pro odkazy -->
+<section class="intro">
+    <h2>{{ concept }}</h2>
+    <p>{{ description }}</p>
+</section>
+
 <section class="concepts">
     <h3>Další kroky</h3>
     <ul>
@@ -33,7 +19,7 @@
             <li>
                 <a href="{{ url_for('snowflake', concept=related_concept) }}" class="button">Co je to {{ related_concept }}?</a>
                 {% if related_concept in explored %}
-                    <span class="checkmark">✔</span>  <!-- Fajfka pro již navštívené pojmy -->
+                    <span class="checkmark">✔</span>
                 {% endif %}
             </li>
         {% endfor %}
@@ -42,12 +28,4 @@
         </li>
     </ul>
 </section>
-
-        <!-- Patička -->
-        <footer>
-            <p>© 2025 Snowflake Education by F&F. Všechna práva vyhrazena.</p>
-            <p><a href="{{ url_for('reset') }}">Resetovat prozkoumané pojmy</a></p>
-        </footer>
-    </div>
-</body>
-</html>
+{% endblock %}

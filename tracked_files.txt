@@ -6,8 +6,8 @@ requirements.txt
 static/snowflake.png
 static/snowing.js
 static/styles.css
-static/styles_tmavsi.css
 templates/christmas.html
 templates/index.html
 templates/snowflake.html
+templates/base.html
 tracked_files.txt
