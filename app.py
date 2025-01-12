@@ -6,6 +6,7 @@ app.secret_key = "tajny_klic_pro_session"  # Tajný klíč pro použití session
 # Data pro jednotlivé pojmy
 concepts = {
     "počítač": "Počítač je stroj, který zpracovává informace pomocí hardwaru a softwaru.",
+    "paměť počítače": "Paměť počítače je hardware, který slouží k ukládání dat a instrukcí, které počítač potřebuje pro svůj běh. Existují různé typy pamětí, jako je RAM (operační paměť), ROM (paměť pouze pro čtení), a cache paměť.",
     "operační systém": "Operační systém poskytuje základní funkce a prostředí pro běh aplikací.",
     "adresář": "Adresář (složka) slouží k organizaci souborů a dalších adresářů.",
     "soubor": "Soubor obsahuje data, která mohou být text, obrázky, kód nebo cokoli jiného.",

@@ -15,6 +15,8 @@ body {
     padding: 20px;
 }
 
+
+/* Styly pro nadpis a podtitul */
 header h1 {
     font-size: 3em;
     color: #1e90ff;
@@ -27,11 +29,14 @@ header .snowflake {
     margin: 20px 0;
 }
 
+
 header .tagline {
     font-size: 1.2em;
     color: #666;
+    margin: 10px 0 20px 0;
 }
 
+/* Styly pro bílé oddíly */
 .intro, .concepts {
     background: white;
     padding: 20px;
@@ -40,28 +45,64 @@ header .tagline {
     margin-bottom: 20px;
 }
 
+
+/* Styly pro odkazy v bílých oddílech */
 .concepts ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrování tlačítek */
 }
 
+
+ /* Styly pro odkazy v bílých oddílech */
 .concepts ul li {
     margin: 10px 0;
+    width: 50%; /* Šířka tlačítek 50 % šířky oddílu */
+    text-align: center; /* Centrování textu */
+    position: relative; /* Relativní pozice pro fajfky */
 }
 
 .concepts ul li a {
     text-decoration: none;
     color: #1e90ff;
     font-size: 1.2em;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: white; /* Bílé pozadí */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%; /* Tlačítko zabírá celou šířku li */
+    box-sizing: border-box; /* Zahrnutí paddingů do šířky */
 }
 
 .concepts ul li a:hover {
-    text-decoration: underline;
+    background-color: #f0f8ff; /* Světle modré pozadí při najetí myší */
+    color: #1e90ff; /* Modrá barva textu */
+    text-decoration: none;
+}
+
+.concepts ul li a:active {
+    background-color: #0077cc; /* Tmavší modrá při stisknutí */
+    color: white; /* Bílá barva textu */
 }
 
 .checkmark {
     color: green;
     margin-left: 10px;
+}
+
+/* Styly pro fajfky */
+.checkmark {
+    color: green;
+    margin-left: 10px;
+    display: inline-block; /* Fajfka vedle odkazu */
+    vertical-align: middle; /* Zarovnání s odkazem */
+    position: absolute; /* Pevná pozice */
+    right: -30px; /* Posun fajfky doprava */
+    top: 50%; /* Vertikální centrování */
+    transform: translateY(-50%); /* Přesné centrování */
 }
 
 footer {
@@ -100,6 +141,7 @@ footer {
     }
 }
 
+/* Styly pro rotující sněhovou vločku */
 .snowflake-logo-container {
     position: fixed; /* Umožňuje pozicování vůči oknu prohlížeče */
     top: 0; /* Přichytí obrázek k hornímu okraji */
@@ -122,3 +164,29 @@ footer {
     margin: 10px; /* Odsazení od okrajů */
     animation: spin 15s linear infinite; /* Pomalá rotace */
 }
+
+
+/* Tlačítka */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1e90ff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 5px 0;
+    transition: background-color 0.3s ease;
+}
+
+
+.button:hover {
+    background-color: #0077cc; /* Tmavší modrá při najetí myší */
+}
+
+/* Styly pro nadpisy v bílých oddílech */
+.intro h2, .concepts h3 {
+    color: #1e90ff;
+    margin-top: 0;
+    font-size: 1.5em; /* Velikost nadpisu */
+}
+ 

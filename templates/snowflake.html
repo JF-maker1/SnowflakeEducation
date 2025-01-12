@@ -8,15 +8,43 @@
 </head>
 <body>
     <div class="container">
+        <!-- Rotující sněhová vločka v pravém horním rohu -->
+        <div class="snowflake-logo-container">
+            <img src="{{ url_for('static', filename='snowflake.png') }}" alt="Sněhová vločka" class="snowflake-logo">
+        </div>
+
+        <!-- Nadpis a podtitul -->
         <header>
-            <h1>{{ concept }}</h1>
-            <img src="{{ url_for('static', filename='snowflake.png') }}" alt="Sněhová vločka" class="snowflake">
+            <h1>Snowflake Education</h1>
+            <p class="tagline">Růst, estetika a klid v poznávání</p>
         </header>
 
-        <section class="content">
+        <!-- Bílý oddíl pro obsah -->
+        <section class="intro">
+            <h2>{{ concept }}</h2>
             <p>{{ description }}</p>
-            <a href="{{ url_for('index') }}" class="button">Zpět na hlavní stránku</a>
         </section>
+
+        <!-- Bílý oddíl pro odkazy -->
+        <section class="concepts">
+            <h3>Další kroky</h3>
+            <ul>
+                {% if concept == "počítač" %}
+                    <li>
+                        <a href="{{ url_for('snowflake', concept='paměť počítače') }}" class="button">Co je to paměť počítače?</a>
+                    </li>
+                {% endif %}
+                <li>
+                    <a href="{{ url_for('index') }}" class="button">Zpět na hlavní stránku</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Patička -->
+        <footer>
+            <p>© 2025 Snowflake Education by F&F. Všechna práva vyhrazena.</p>
+            <p><a href="{{ url_for('reset') }}">Resetovat prozkoumané pojmy</a></p>
+        </footer>
     </div>
 </body>
 </html>
